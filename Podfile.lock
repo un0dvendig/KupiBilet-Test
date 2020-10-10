@@ -1,0 +1,43 @@
+PODS:
+  - Alamofire (5.2.2)
+  - DifferenceKit/Core (1.1.5)
+  - DifferenceKit/UIKitExtension (1.1.5):
+    - DifferenceKit/Core
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - Swinject (2.7.1)
+  - SwinjectAutoregistration (2.7.0):
+    - Swinject (~> 2.7)
+  - TinyConstraints (4.0.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - DifferenceKit/Core
+  - DifferenceKit/UIKitExtension
+  - Moya (~> 14.0)
+  - Swinject
+  - SwinjectAutoregistration (~> 2.7.0)
+  - TinyConstraints
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - DifferenceKit
+    - Moya
+    - Swinject
+    - SwinjectAutoregistration
+    - TinyConstraints
+
+SPEC CHECKSUMS:
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  DifferenceKit: 516f12e336ed65a3a0665847b5c3cb5cad4bd4ea
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
+  SwinjectAutoregistration: 330f5012642a8b5c89a8a4adb0c5e52df07382c0
+  TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
+
+PODFILE CHECKSUM: 24c6a938fcc189d87c1c994695f87cd9712d5d91
+
+COCOAPODS: 1.9.3

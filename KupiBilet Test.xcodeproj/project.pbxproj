@@ -7,18 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CDD348B339D9CC7501B6ABC4 /* Pods_KupiBilet_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA7B76C69940C342136CEE8 /* Pods_KupiBilet_Test.framework */; };
 		DD97016B2531A23000B26417 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD97016A2531A23000B26417 /* AppDelegate.swift */; };
 		DD97016F2531A23000B26417 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD97016E2531A23000B26417 /* ViewController.swift */; };
-		DD9701722531A23000B26417 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD9701702531A23000B26417 /* Main.storyboard */; };
 		DD9701742531A23100B26417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD9701732531A23100B26417 /* Assets.xcassets */; };
 		DD9701772531A23100B26417 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD9701752531A23100B26417 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3BA7B76C69940C342136CEE8 /* Pods_KupiBilet_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KupiBilet_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C851D11680E9AF914C2D5102 /* Pods-KupiBilet Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KupiBilet Test.debug.xcconfig"; path = "Target Support Files/Pods-KupiBilet Test/Pods-KupiBilet Test.debug.xcconfig"; sourceTree = "<group>"; };
+		D6AE504A2C3628DFC9385644 /* Pods-KupiBilet Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KupiBilet Test.release.xcconfig"; path = "Target Support Files/Pods-KupiBilet Test/Pods-KupiBilet Test.release.xcconfig"; sourceTree = "<group>"; };
 		DD9701672531A23000B26417 /* KupiBilet Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KupiBilet Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD97016A2531A23000B26417 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD97016E2531A23000B26417 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DD9701712531A23000B26417 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD9701732531A23100B26417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD9701762531A23100B26417 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD9701782531A23100B26417 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -29,17 +31,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDD348B339D9CC7501B6ABC4 /* Pods_KupiBilet_Test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		953F535D7A9789729F258761 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BA7B76C69940C342136CEE8 /* Pods_KupiBilet_Test.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A7806637540855BC1787AAB4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C851D11680E9AF914C2D5102 /* Pods-KupiBilet Test.debug.xcconfig */,
+				D6AE504A2C3628DFC9385644 /* Pods-KupiBilet Test.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		DD97015E2531A23000B26417 = {
 			isa = PBXGroup;
 			children = (
 				DD9701692531A23000B26417 /* KupiBilet Test */,
 				DD9701682531A23000B26417 /* Products */,
+				A7806637540855BC1787AAB4 /* Pods */,
+				953F535D7A9789729F258761 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,7 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				DD9701812531A36900B26417 /* Application */,
-				DD9701702531A23000B26417 /* Main.storyboard */,
 				DD9701822531A37F00B26417 /* Resources */,
 				DD9701832531A38300B26417 /* Supporting */,
 				DD97016E2531A23000B26417 /* ViewController.swift */,
@@ -95,9 +117,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD97017B2531A23100B26417 /* Build configuration list for PBXNativeTarget "KupiBilet Test" */;
 			buildPhases = (
+				80C27FCF1F5800F224F3E5F6 /* [CP] Check Pods Manifest.lock */,
 				DD9701632531A23000B26417 /* Sources */,
 				DD9701642531A23000B26417 /* Frameworks */,
 				DD9701652531A23000B26417 /* Resources */,
+				F5415C8FEE489569DFBBF9F5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -147,11 +171,52 @@
 			files = (
 				DD9701772531A23100B26417 /* LaunchScreen.storyboard in Resources */,
 				DD9701742531A23100B26417 /* Assets.xcassets in Resources */,
-				DD9701722531A23000B26417 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		80C27FCF1F5800F224F3E5F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KupiBilet Test-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5415C8FEE489569DFBBF9F5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KupiBilet Test/Pods-KupiBilet Test-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KupiBilet Test/Pods-KupiBilet Test-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KupiBilet Test/Pods-KupiBilet Test-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DD9701632531A23000B26417 /* Sources */ = {
@@ -166,14 +231,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DD9701702531A23000B26417 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DD9701712531A23000B26417 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DD9701752531A23100B26417 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -303,6 +360,7 @@
 		};
 		DD97017C2531A23100B26417 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C851D11680E9AF914C2D5102 /* Pods-KupiBilet Test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -323,6 +381,7 @@
 		};
 		DD97017D2531A23100B26417 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6AE504A2C3628DFC9385644 /* Pods-KupiBilet Test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
