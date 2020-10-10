@@ -24,6 +24,17 @@
 		DD9701C42531BBE700B26417 /* VoidResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9701C32531BBE700B26417 /* VoidResult.swift */; };
 		DD9701E02531D50100B26417 /* LocalFilesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9701DF2531D50100B26417 /* LocalFilesProvider.swift */; };
 		DD9701F82531EE7400B26417 /* DisconnectInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9701F72531EE7400B26417 /* DisconnectInfo.swift */; };
+		DD9701FD2531FB8E00B26417 /* TableViewCellHeightProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9701FC2531FB8E00B26417 /* TableViewCellHeightProvider.swift */; };
+		DD9702022531FBAF00B26417 /* TableViewCellTypeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9702012531FBAF00B26417 /* TableViewCellTypeProvider.swift */; };
+		DD9702052531FBB600B26417 /* TableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9702042531FBB600B26417 /* TableViewAdapter.swift */; };
+		DD9702082531FBC300B26417 /* TableViewUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9702072531FBC300B26417 /* TableViewUpdater.swift */; };
+		DD97020B2531FBCE00B26417 /* TableViewEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD97020A2531FBCE00B26417 /* TableViewEvents.swift */; };
+		DD97020E2531FBD500B26417 /* ScrollViewEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD97020D2531FBD400B26417 /* ScrollViewEvents.swift */; };
+		DD9702112531FBDF00B26417 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9702102531FBDF00B26417 /* TableViewCell.swift */; };
+		DD9702142531FBE800B26417 /* TableViewDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9702132531FBE800B26417 /* TableViewDirector.swift */; };
+		DD9702172531FC0700B26417 /* FallbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9702162531FC0700B26417 /* FallbackCell.swift */; };
+		DD97021B2531FC3300B26417 /* TableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD97021A2531FC3300B26417 /* TableViewCellViewModel.swift */; };
+		DD9702202532008200B26417 /* UITableView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD97021F2532008200B26417 /* UITableView++.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +59,17 @@
 		DD9701C32531BBE700B26417 /* VoidResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoidResult.swift; sourceTree = "<group>"; };
 		DD9701DF2531D50100B26417 /* LocalFilesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFilesProvider.swift; sourceTree = "<group>"; };
 		DD9701F72531EE7400B26417 /* DisconnectInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisconnectInfo.swift; sourceTree = "<group>"; };
+		DD9701FC2531FB8E00B26417 /* TableViewCellHeightProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellHeightProvider.swift; sourceTree = "<group>"; };
+		DD9702012531FBAF00B26417 /* TableViewCellTypeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellTypeProvider.swift; sourceTree = "<group>"; };
+		DD9702042531FBB600B26417 /* TableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAdapter.swift; sourceTree = "<group>"; };
+		DD9702072531FBC300B26417 /* TableViewUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewUpdater.swift; sourceTree = "<group>"; };
+		DD97020A2531FBCE00B26417 /* TableViewEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewEvents.swift; sourceTree = "<group>"; };
+		DD97020D2531FBD400B26417 /* ScrollViewEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewEvents.swift; sourceTree = "<group>"; };
+		DD9702102531FBDF00B26417 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		DD9702132531FBE800B26417 /* TableViewDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDirector.swift; sourceTree = "<group>"; };
+		DD9702162531FC0700B26417 /* FallbackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallbackCell.swift; sourceTree = "<group>"; };
+		DD97021A2531FC3300B26417 /* TableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellViewModel.swift; sourceTree = "<group>"; };
+		DD97021F2532008200B26417 /* UITableView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView++.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +122,8 @@
 		DD9701692531A23000B26417 /* KupiBilet Test */ = {
 			isa = PBXGroup;
 			children = (
+				DD97021E2532007A00B26417 /* Extensions */,
+				DD9701FA2531FB4200B26417 /* Packages */,
 				DD9701812531A36900B26417 /* Application */,
 				DD9701932531AA2900B26417 /* Modules */,
 				DD9701A32531AD3700B26417 /* Network */,
@@ -217,6 +241,39 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		DD9701FA2531FB4200B26417 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				DD9701FB2531FB5300B26417 /* TableView */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		DD9701FB2531FB5300B26417 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DD9702162531FC0700B26417 /* FallbackCell.swift */,
+				DD97020D2531FBD400B26417 /* ScrollViewEvents.swift */,
+				DD9702042531FBB600B26417 /* TableViewAdapter.swift */,
+				DD9702102531FBDF00B26417 /* TableViewCell.swift */,
+				DD9701FC2531FB8E00B26417 /* TableViewCellHeightProvider.swift */,
+				DD9702012531FBAF00B26417 /* TableViewCellTypeProvider.swift */,
+				DD97021A2531FC3300B26417 /* TableViewCellViewModel.swift */,
+				DD9702132531FBE800B26417 /* TableViewDirector.swift */,
+				DD97020A2531FBCE00B26417 /* TableViewEvents.swift */,
+				DD9702072531FBC300B26417 /* TableViewUpdater.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		DD97021E2532007A00B26417 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DD97021F2532008200B26417 /* UITableView++.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -331,15 +388,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD9701AF2531B00000B26417 /* ListingService.swift in Sources */,
+				DD9702142531FBE800B26417 /* TableViewDirector.swift in Sources */,
 				DD9701F82531EE7400B26417 /* DisconnectInfo.swift in Sources */,
+				DD97020B2531FBCE00B26417 /* TableViewEvents.swift in Sources */,
 				DD9701BB2531B60600B26417 /* ClassifiersResponse.swift in Sources */,
 				DD9701AC2531ADEB00B26417 /* AppConstants.swift in Sources */,
+				DD97021B2531FC3300B26417 /* TableViewCellViewModel.swift in Sources */,
 				DD9701962531AA8900B26417 /* ListingAssembler.swift in Sources */,
 				DD9701C02531B67500B26417 /* Classifier.swift in Sources */,
+				DD9702202532008200B26417 /* UITableView++.swift in Sources */,
+				DD9702172531FC0700B26417 /* FallbackCell.swift in Sources */,
 				DD9701A02531AC2100B26417 /* ListingModelController.swift in Sources */,
+				DD9702082531FBC300B26417 /* TableViewUpdater.swift in Sources */,
 				DD97019D2531AB7800B26417 /* ListingViewController.swift in Sources */,
 				DD9701E02531D50100B26417 /* LocalFilesProvider.swift in Sources */,
+				DD9702052531FBB600B26417 /* TableViewAdapter.swift in Sources */,
+				DD9702112531FBDF00B26417 /* TableViewCell.swift in Sources */,
+				DD97020E2531FBD500B26417 /* ScrollViewEvents.swift in Sources */,
 				DD97016B2531A23000B26417 /* AppDelegate.swift in Sources */,
+				DD9702022531FBAF00B26417 /* TableViewCellTypeProvider.swift in Sources */,
+				DD9701FD2531FB8E00B26417 /* TableViewCellHeightProvider.swift in Sources */,
 				DD9701912531A90300B26417 /* AppAssembler.swift in Sources */,
 				DD9701B32531B01A00B26417 /* ListingServiceImpl.swift in Sources */,
 				DD9701A82531AD9100B26417 /* ListingAPI.swift in Sources */,
