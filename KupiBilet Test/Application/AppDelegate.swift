@@ -6,15 +6,21 @@
 //
 
 import UIKit
+import SwinjectAutoregistration
 
 // MARK: - UIResponder
 @main
 class AppDelegate: UIResponder {
     // MARK: Properties
+    let assembler: AppAssembler
     var window: UIWindow?
     
     // MARK: Initialization
     override init() {
+        let assembler = AppAssembler(
+            parent: nil
+        )
+        self.assembler = assembler
         super.init()
     }
     
@@ -23,8 +29,8 @@ class AppDelegate: UIResponder {
         let window = UIWindow(
             frame: UIScreen.main.bounds
         )
-        let viewController = ViewController()
-        window.rootViewController = viewController
+        let listingViewController = self.assembler.resolver ~> ListingViewController.self
+        window.rootViewController = listingViewController
         self.window = window
         self.window?.makeKeyAndVisible()
     }
