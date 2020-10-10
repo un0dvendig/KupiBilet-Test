@@ -13,13 +13,17 @@
 		DD9701772531A23100B26417 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD9701752531A23100B26417 /* LaunchScreen.storyboard */; };
 		DD9701912531A90300B26417 /* AppAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9701902531A90200B26417 /* AppAssembler.swift */; };
 		DD9701962531AA8900B26417 /* ListingAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9701952531AA8900B26417 /* ListingAssembler.swift */; };
-		DD97019A2531AB7100B26417 /* ListingModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9701992531AB7100B26417 /* ListingModelController.swift */; };
 		DD97019D2531AB7800B26417 /* ListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD97019C2531AB7800B26417 /* ListingViewController.swift */; };
-		DD9701A02531AC2100B26417 /* ListingModelControllerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD97019F2531AC2100B26417 /* ListingModelControllerImpl.swift */; };
+		DD9701A02531AC2100B26417 /* ListingModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD97019F2531AC2100B26417 /* ListingModelController.swift */; };
 		DD9701A82531AD9100B26417 /* ListingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9701A72531AD9100B26417 /* ListingAPI.swift */; };
 		DD9701AC2531ADEB00B26417 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9701AB2531ADEB00B26417 /* AppConstants.swift */; };
 		DD9701AF2531B00000B26417 /* ListingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9701AE2531B00000B26417 /* ListingService.swift */; };
 		DD9701B32531B01A00B26417 /* ListingServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9701B22531B01A00B26417 /* ListingServiceImpl.swift */; };
+		DD9701BB2531B60600B26417 /* ClassifiersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9701BA2531B60600B26417 /* ClassifiersResponse.swift */; };
+		DD9701C02531B67500B26417 /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9701BF2531B67500B26417 /* Classifier.swift */; };
+		DD9701C42531BBE700B26417 /* VoidResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9701C32531BBE700B26417 /* VoidResult.swift */; };
+		DD9701E02531D50100B26417 /* LocalFilesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9701DF2531D50100B26417 /* LocalFilesProvider.swift */; };
+		DD9701F82531EE7400B26417 /* DisconnectInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9701F72531EE7400B26417 /* DisconnectInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,13 +37,17 @@
 		DD9701782531A23100B26417 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD9701902531A90200B26417 /* AppAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembler.swift; sourceTree = "<group>"; };
 		DD9701952531AA8900B26417 /* ListingAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingAssembler.swift; sourceTree = "<group>"; };
-		DD9701992531AB7100B26417 /* ListingModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingModelController.swift; sourceTree = "<group>"; };
 		DD97019C2531AB7800B26417 /* ListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingViewController.swift; sourceTree = "<group>"; };
-		DD97019F2531AC2100B26417 /* ListingModelControllerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingModelControllerImpl.swift; sourceTree = "<group>"; };
+		DD97019F2531AC2100B26417 /* ListingModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingModelController.swift; sourceTree = "<group>"; };
 		DD9701A72531AD9100B26417 /* ListingAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingAPI.swift; sourceTree = "<group>"; };
 		DD9701AB2531ADEB00B26417 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		DD9701AE2531B00000B26417 /* ListingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingService.swift; sourceTree = "<group>"; };
 		DD9701B22531B01A00B26417 /* ListingServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingServiceImpl.swift; sourceTree = "<group>"; };
+		DD9701BA2531B60600B26417 /* ClassifiersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiersResponse.swift; sourceTree = "<group>"; };
+		DD9701BF2531B67500B26417 /* Classifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
+		DD9701C32531BBE700B26417 /* VoidResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoidResult.swift; sourceTree = "<group>"; };
+		DD9701DF2531D50100B26417 /* LocalFilesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFilesProvider.swift; sourceTree = "<group>"; };
+		DD9701F72531EE7400B26417 /* DisconnectInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisconnectInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +103,7 @@
 				DD9701812531A36900B26417 /* Application */,
 				DD9701932531AA2900B26417 /* Modules */,
 				DD9701A32531AD3700B26417 /* Network */,
+				DD9701DE2531D4D600B26417 /* Persistence */,
 				DD9701822531A37F00B26417 /* Resources */,
 				DD9701832531A38300B26417 /* Supporting */,
 			);
@@ -139,20 +148,11 @@
 		DD9701942531AA4200B26417 /* Listing */ = {
 			isa = PBXGroup;
 			children = (
-				DD9701A22531AC5E00B26417 /* Protocols */,
 				DD9701952531AA8900B26417 /* ListingAssembler.swift */,
-				DD97019F2531AC2100B26417 /* ListingModelControllerImpl.swift */,
+				DD97019F2531AC2100B26417 /* ListingModelController.swift */,
 				DD97019C2531AB7800B26417 /* ListingViewController.swift */,
 			);
 			path = Listing;
-			sourceTree = "<group>";
-		};
-		DD9701A22531AC5E00B26417 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				DD9701992531AB7100B26417 /* ListingModelController.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		DD9701A32531AD3700B26417 /* Network */ = {
@@ -161,6 +161,7 @@
 				DD9701A42531AD6D00B26417 /* APIs */,
 				DD9701A52531AD7500B26417 /* Models */,
 				DD9701A62531AD7A00B26417 /* Services */,
+				DD9701C32531BBE700B26417 /* VoidResult.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -176,6 +177,8 @@
 		DD9701A52531AD7500B26417 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DD9701BA2531B60600B26417 /* ClassifiersResponse.swift */,
+				DD9701BF2531B67500B26417 /* Classifier.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -195,6 +198,23 @@
 				DD9701B22531B01A00B26417 /* ListingServiceImpl.swift */,
 			);
 			path = ListingService;
+			sourceTree = "<group>";
+		};
+		DD9701DE2531D4D600B26417 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				DD9701F62531EE4300B26417 /* Models */,
+				DD9701DF2531D50100B26417 /* LocalFilesProvider.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		DD9701F62531EE4300B26417 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DD9701F72531EE7400B26417 /* DisconnectInfo.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,15 +331,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD9701AF2531B00000B26417 /* ListingService.swift in Sources */,
+				DD9701F82531EE7400B26417 /* DisconnectInfo.swift in Sources */,
+				DD9701BB2531B60600B26417 /* ClassifiersResponse.swift in Sources */,
 				DD9701AC2531ADEB00B26417 /* AppConstants.swift in Sources */,
 				DD9701962531AA8900B26417 /* ListingAssembler.swift in Sources */,
-				DD97019A2531AB7100B26417 /* ListingModelController.swift in Sources */,
-				DD9701A02531AC2100B26417 /* ListingModelControllerImpl.swift in Sources */,
+				DD9701C02531B67500B26417 /* Classifier.swift in Sources */,
+				DD9701A02531AC2100B26417 /* ListingModelController.swift in Sources */,
 				DD97019D2531AB7800B26417 /* ListingViewController.swift in Sources */,
+				DD9701E02531D50100B26417 /* LocalFilesProvider.swift in Sources */,
 				DD97016B2531A23000B26417 /* AppDelegate.swift in Sources */,
 				DD9701912531A90300B26417 /* AppAssembler.swift in Sources */,
 				DD9701B32531B01A00B26417 /* ListingServiceImpl.swift in Sources */,
 				DD9701A82531AD9100B26417 /* ListingAPI.swift in Sources */,
+				DD9701C42531BBE700B26417 /* VoidResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

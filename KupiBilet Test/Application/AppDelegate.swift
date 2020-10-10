@@ -29,7 +29,11 @@ class AppDelegate: UIResponder {
         let window = UIWindow(
             frame: UIScreen.main.bounds
         )
-        let listingViewController = self.assembler.resolver ~> ListingViewController.self
+        let classifiersId: Int = 4
+        let listingViewController = self.assembler.resolver ~> (
+            ListingViewController.self,
+            argument: classifiersId
+        )
         window.rootViewController = listingViewController
         self.window = window
         self.window?.makeKeyAndVisible()

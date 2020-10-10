@@ -11,6 +11,6 @@ import Moya
 protocol ListingService {
     func getClassifiers(
         withId id: Int,
-        then handler: @escaping (Result<String, MoyaError>) -> Void
+        then handler: @escaping (Result<[DisconnectInfo], MoyaError>) -> Void
     )
 }

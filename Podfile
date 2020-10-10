@@ -12,6 +12,8 @@ target 'KupiBilet Test' do
   pod 'Alamofire'
   pod "TinyConstraints"
   pod 'Moya', '~> 14.0'
+  pod 'Zip', '~> 2.1'
+  pod 'SwiftyJSON', '~> 4.0'  
   pod 'Swinject'
   pod 'SwinjectAutoregistration', '~> 2.7.0'
   pod 'DifferenceKit/Core'

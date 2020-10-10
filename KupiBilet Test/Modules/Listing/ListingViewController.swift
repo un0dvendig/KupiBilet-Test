@@ -22,6 +22,8 @@ final class ListingViewController: UIViewController {
             nibName: nil,
             bundle: nil
         )
+        
+        self.modelController.delegate = self
     }
     
     @available(*, unavailable)
@@ -36,5 +38,24 @@ final class ListingViewController: UIViewController {
     // MARK: View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.modelController.loadPage()
+    }
+}
+
+// MARK: - ListingModelControllerDelegate
+extension ListingViewController: ListingModelControllerDelegate {
+    func pageLoading() {
+        
+    }
+    
+    func mainPageLoaded(
+        with result: PageLoadingResult
+    ) {
+        switch result {
+        case .success(let items):
+            print("Got \(items.count) items")
+        case .failure(let error):
+            print("Got and error! \(error)")
+        }
     }
 }

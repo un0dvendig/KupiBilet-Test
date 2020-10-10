@@ -39,8 +39,14 @@ struct ListingAssembly: Assembly {
         // View controller
         container.register(
             ListingViewController.self
-        ) {
-            let modelController = $0 ~> ListingModelController.self
+        ) { (
+            resolver,
+            classifiersId: Int
+        ) -> ListingViewController in
+            let modelController = resolver ~> (
+                ListingModelController.self,
+                argument: classifiersId
+            )
             let viewController = ListingViewController(
                 modelController: modelController
             )
@@ -50,9 +56,13 @@ struct ListingAssembly: Assembly {
         // Model controller
         container.register(
             ListingModelController.self
-        ) {
-            let listingService = $0 ~> ListingService.self
-            let modelController = ListingModelControllerImpl(
+        ) { (
+            resolver,
+            classifiersId: Int
+        ) -> ListingModelController in
+            let listingService = resolver ~> ListingService.self
+            let modelController = ListingModelController(
+                classifiersId: classifiersId,
                 listingService: listingService
             )
             return modelController

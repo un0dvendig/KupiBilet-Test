@@ -49,7 +49,7 @@ extension ListingAPI: TargetType {
             )
             return .requestParameters(
                 parameters: parameters,
-                encoding: JSONEncoding.default
+                encoding: URLEncoding.default
             )
         }
     }
@@ -59,6 +59,4 @@ extension ListingAPI: TargetType {
         case .classifiers: return [:]
         }
     }
-    
-    
 }

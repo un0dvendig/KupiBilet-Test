@@ -55,14 +55,23 @@ private struct AppAssembly: Assembly {
         // MARK: Services
         container.register(
             ListingService.self
-        ) { (_) in
+        ) {
             let provider = MoyaProvider<ListingAPI>(
                 callbackQueue: DispatchQueue.global(qos: .utility)
             )
+            let localFilesProvider = $0 ~> LocalFilesProvider.self
             let service = ListingServiceImpl(
-                provider: provider
+                provider: provider,
+                localFilesProvider: localFilesProvider
             )
             return service
+        }
+        
+        container.register(
+            LocalFilesProvider.self
+        ) { (_) in
+            let provider = LocalFilesProvider()
+            return provider
         }
     }
 }
