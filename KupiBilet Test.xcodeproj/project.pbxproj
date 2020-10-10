@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DD97016B2531A23000B26417 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD97016A2531A23000B26417 /* AppDelegate.swift */; };
-		DD97016D2531A23000B26417 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD97016C2531A23000B26417 /* SceneDelegate.swift */; };
 		DD97016F2531A23000B26417 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD97016E2531A23000B26417 /* ViewController.swift */; };
 		DD9701722531A23000B26417 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD9701702531A23000B26417 /* Main.storyboard */; };
 		DD9701742531A23100B26417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD9701732531A23100B26417 /* Assets.xcassets */; };
@@ -18,7 +17,6 @@
 /* Begin PBXFileReference section */
 		DD9701672531A23000B26417 /* KupiBilet Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KupiBilet Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD97016A2531A23000B26417 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DD97016C2531A23000B26417 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DD97016E2531A23000B26417 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DD9701712531A23000B26417 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD9701732531A23100B26417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,15 +54,38 @@
 		DD9701692531A23000B26417 /* KupiBilet Test */ = {
 			isa = PBXGroup;
 			children = (
-				DD97016A2531A23000B26417 /* AppDelegate.swift */,
-				DD97016C2531A23000B26417 /* SceneDelegate.swift */,
-				DD97016E2531A23000B26417 /* ViewController.swift */,
+				DD9701812531A36900B26417 /* Application */,
 				DD9701702531A23000B26417 /* Main.storyboard */,
-				DD9701732531A23100B26417 /* Assets.xcassets */,
-				DD9701752531A23100B26417 /* LaunchScreen.storyboard */,
-				DD9701782531A23100B26417 /* Info.plist */,
+				DD9701822531A37F00B26417 /* Resources */,
+				DD9701832531A38300B26417 /* Supporting */,
+				DD97016E2531A23000B26417 /* ViewController.swift */,
 			);
 			path = "KupiBilet Test";
+			sourceTree = "<group>";
+		};
+		DD9701812531A36900B26417 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				DD97016A2531A23000B26417 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		DD9701822531A37F00B26417 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DD9701732531A23100B26417 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DD9701832531A38300B26417 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				DD9701782531A23100B26417 /* Info.plist */,
+				DD9701752531A23100B26417 /* LaunchScreen.storyboard */,
+			);
+			path = Supporting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +160,6 @@
 			files = (
 				DD97016F2531A23000B26417 /* ViewController.swift in Sources */,
 				DD97016B2531A23000B26417 /* AppDelegate.swift in Sources */,
-				DD97016D2531A23000B26417 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +236,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -271,7 +291,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -288,7 +308,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZTJ8W8QRE;
-				INFOPLIST_FILE = "KupiBilet Test/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/KupiBilet Test/Supporting/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +317,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "un0dvend1g.KupiBilet-Test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -307,7 +328,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZTJ8W8QRE;
-				INFOPLIST_FILE = "KupiBilet Test/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/KupiBilet Test/Supporting/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +337,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "un0dvend1g.KupiBilet-Test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
