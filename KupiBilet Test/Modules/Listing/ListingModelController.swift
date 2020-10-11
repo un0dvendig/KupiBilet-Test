@@ -119,7 +119,6 @@ final class ListingModelController {
             houseInfo += " " + "литер" + " " + buildingLetter
         }
         
-        // TODO: Format me
         let dateString: String
         let dateComponents = disconnectInfo.disconnectDateRange.components(separatedBy: "-")
         if let startDateString = dateComponents.first,

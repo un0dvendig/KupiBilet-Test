@@ -84,19 +84,30 @@ final class ListingViewController: UIViewController {
     }
     
     private func setupDummyViews() {
-        // TODO: Add localization
         let retryButtonAction: () -> Void = {
             self.hideShownDummyView()
             self.modelController.loadPage()
         }
+        let retryButtonViewModelTitle = NSLocalizedString(
+            "DummyView.TryAgainButton.Title.Text",
+            comment: ""
+        )
         let retryButtonViewModel: DummyView.ViewModel.ButtonViewModel = .init(
-            title: "Try Again",
+            title: retryButtonViewModelTitle,
             action: retryButtonAction
         )
         
+        let noInternetViewModelTitle = NSLocalizedString(
+            "DummyView.NoConnection.Title.Text",
+            comment: ""
+        )
+        let noInternetViewModelDescription = NSLocalizedString(
+            "DummyView.NoConnection.Description.Text",
+            comment: ""
+        )
         let noInternetViewModel: DummyView.ViewModel = .init(
-            title: "No connection 😔",
-            description: "It appears, that you are not connected to the Internet. Retry later.",
+            title: noInternetViewModelTitle,
+            description: noInternetViewModelDescription,
             button: retryButtonViewModel
         )
         self.noInternetDummyView.configure(
@@ -104,9 +115,17 @@ final class ListingViewController: UIViewController {
         )
         self.noInternetDummyView.isHidden = true
         
+        let otherErrorViewModelTitle = NSLocalizedString(
+            "DummyView.OtherError.Title.Text",
+            comment: ""
+        )
+        let otherErrorViewModelDescription = NSLocalizedString(
+            "DummyView.OtherError.Description.Text",
+            comment: ""
+        )
         let otherErrorViewModel: DummyView.ViewModel = .init(
-            title: "Unknown error 🤔",
-            description: "Something unexpected happened, please, try again.",
+            title: otherErrorViewModelTitle,
+            description: otherErrorViewModelDescription,
             button: retryButtonViewModel
         )
         self.otherErrorDummyView.configure(

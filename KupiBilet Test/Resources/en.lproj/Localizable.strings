@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  KupiBilet Test
+
+  Created by Eugene Ilyin on 11.10.2020.
+  
+*/
+
+// Listing
+"DummyView.TryAgainButton.Title.Text" = "Try Again";
+"DummyView.NoConnection.Title.Text" = "No connection 😔";
+"DummyView.NoConnection.Description.Text" = "It appears, that you are not connected to the Internet. Retry later.";
+"DummyView.OtherError.Title.Text" = "Unknown error 🤔";
+"DummyView.OtherError.Description.Text" = "Something unexpected happened. \nPlease, try again.";
