@@ -32,6 +32,18 @@ final class ListingModelController {
     private let classifiersId: Int
     private let listingService: ListingService
     
+    private lazy var dateStringFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        return dateFormatter
+    }()
+    private lazy var dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = .init(identifier: "ru")
+        dateFormatter.dateFormat = "d MMMM yyyy"
+        return dateFormatter
+    }()
+    
     // View models
     private var disconnectInfoViewModel: [ListingDisconnectInfoCell.ViewModel] = []
     
@@ -108,7 +120,20 @@ final class ListingModelController {
         }
         
         // TODO: Format me
-        let dateString = disconnectInfo.disconnectDateRange
+        let dateString: String
+        let dateComponents = disconnectInfo.disconnectDateRange.components(separatedBy: "-")
+        if let startDateString = dateComponents.first,
+           let endDateString = dateComponents.last,
+           let startDate = self.dateStringFormatter.date(from: startDateString),
+           let endDate = self.dateStringFormatter.date(from: endDateString) {
+            let formattedStartDateString = self.dateFormatter.string(from: startDate)
+            let formattedEndDateString = self.dateFormatter.string(from: endDate)
+            
+            dateString = formattedStartDateString + " - " + formattedEndDateString
+        } else {
+            // In case of any error, just use unformatted date.
+            dateString = disconnectInfo.disconnectDateRange
+        }
         
         let listingDisconnectViewModel: ListingDisconnectInfoCell.ViewModel = .init(
             cityName: cityName,
