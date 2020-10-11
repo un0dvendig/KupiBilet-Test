@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		CDD348B339D9CC7501B6ABC4 /* Pods_KupiBilet_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA7B76C69940C342136CEE8 /* Pods_KupiBilet_Test.framework */; };
+		DD261FDB25330A0E00013A78 /* ListingDisconnectInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD261FDA25330A0E00013A78 /* ListingDisconnectInfoCell.swift */; };
+		DD261FE125330EEA00013A78 /* ListingDisconnectInfoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD261FE025330EEA00013A78 /* ListingDisconnectInfoCellViewModel.swift */; };
+		DD876093253313F0007839F5 /* ListingCellHeightProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD876092253313F0007839F5 /* ListingCellHeightProvider.swift */; };
+		DD876097253313F9007839F5 /* ListingCellTypeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD876096253313F9007839F5 /* ListingCellTypeProvider.swift */; };
+		DD87609B25331442007839F5 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87609A25331442007839F5 /* Cache.swift */; };
 		DD97016B2531A23000B26417 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD97016A2531A23000B26417 /* AppDelegate.swift */; };
 		DD9701742531A23100B26417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD9701732531A23100B26417 /* Assets.xcassets */; };
 		DD9701772531A23100B26417 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD9701752531A23100B26417 /* LaunchScreen.storyboard */; };
@@ -41,6 +46,11 @@
 		3BA7B76C69940C342136CEE8 /* Pods_KupiBilet_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KupiBilet_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C851D11680E9AF914C2D5102 /* Pods-KupiBilet Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KupiBilet Test.debug.xcconfig"; path = "Target Support Files/Pods-KupiBilet Test/Pods-KupiBilet Test.debug.xcconfig"; sourceTree = "<group>"; };
 		D6AE504A2C3628DFC9385644 /* Pods-KupiBilet Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KupiBilet Test.release.xcconfig"; path = "Target Support Files/Pods-KupiBilet Test/Pods-KupiBilet Test.release.xcconfig"; sourceTree = "<group>"; };
+		DD261FDA25330A0E00013A78 /* ListingDisconnectInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingDisconnectInfoCell.swift; sourceTree = "<group>"; };
+		DD261FE025330EEA00013A78 /* ListingDisconnectInfoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingDisconnectInfoCellViewModel.swift; sourceTree = "<group>"; };
+		DD876092253313F0007839F5 /* ListingCellHeightProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingCellHeightProvider.swift; sourceTree = "<group>"; };
+		DD876096253313F9007839F5 /* ListingCellTypeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingCellTypeProvider.swift; sourceTree = "<group>"; };
+		DD87609A25331442007839F5 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		DD9701672531A23000B26417 /* KupiBilet Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KupiBilet Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD97016A2531A23000B26417 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD9701732531A23100B26417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,6 +111,31 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		DD261FD9253309F100013A78 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DD261FDF25330ED000013A78 /* ListingDisconnectInfoCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DD261FDF25330ED000013A78 /* ListingDisconnectInfoCell */ = {
+			isa = PBXGroup;
+			children = (
+				DD261FDA25330A0E00013A78 /* ListingDisconnectInfoCell.swift */,
+				DD261FE025330EEA00013A78 /* ListingDisconnectInfoCellViewModel.swift */,
+			);
+			path = ListingDisconnectInfoCell;
+			sourceTree = "<group>";
+		};
+		DD8760992533143C007839F5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DD87609A25331442007839F5 /* Cache.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		DD97015E2531A23000B26417 = {
 			isa = PBXGroup;
 			children = (
@@ -122,11 +157,11 @@
 		DD9701692531A23000B26417 /* KupiBilet Test */ = {
 			isa = PBXGroup;
 			children = (
-				DD97021E2532007A00B26417 /* Extensions */,
-				DD9701FA2531FB4200B26417 /* Packages */,
 				DD9701812531A36900B26417 /* Application */,
+				DD97021E2532007A00B26417 /* Extensions */,
 				DD9701932531AA2900B26417 /* Modules */,
 				DD9701A32531AD3700B26417 /* Network */,
+				DD9701FA2531FB4200B26417 /* Packages */,
 				DD9701DE2531D4D600B26417 /* Persistence */,
 				DD9701822531A37F00B26417 /* Resources */,
 				DD9701832531A38300B26417 /* Supporting */,
@@ -172,7 +207,10 @@
 		DD9701942531AA4200B26417 /* Listing */ = {
 			isa = PBXGroup;
 			children = (
+				DD261FD9253309F100013A78 /* Cells */,
 				DD9701952531AA8900B26417 /* ListingAssembler.swift */,
+				DD876092253313F0007839F5 /* ListingCellHeightProvider.swift */,
+				DD876096253313F9007839F5 /* ListingCellTypeProvider.swift */,
 				DD97019F2531AC2100B26417 /* ListingModelController.swift */,
 				DD97019C2531AB7800B26417 /* ListingViewController.swift */,
 			);
@@ -244,6 +282,7 @@
 		DD9701FA2531FB4200B26417 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				DD8760992533143C007839F5 /* Utils */,
 				DD9701FB2531FB5300B26417 /* TableView */,
 			);
 			path = Packages;
@@ -391,20 +430,25 @@
 				DD9702142531FBE800B26417 /* TableViewDirector.swift in Sources */,
 				DD9701F82531EE7400B26417 /* DisconnectInfo.swift in Sources */,
 				DD97020B2531FBCE00B26417 /* TableViewEvents.swift in Sources */,
+				DD876093253313F0007839F5 /* ListingCellHeightProvider.swift in Sources */,
 				DD9701BB2531B60600B26417 /* ClassifiersResponse.swift in Sources */,
 				DD9701AC2531ADEB00B26417 /* AppConstants.swift in Sources */,
+				DD876097253313F9007839F5 /* ListingCellTypeProvider.swift in Sources */,
 				DD97021B2531FC3300B26417 /* TableViewCellViewModel.swift in Sources */,
 				DD9701962531AA8900B26417 /* ListingAssembler.swift in Sources */,
+				DD261FE125330EEA00013A78 /* ListingDisconnectInfoCellViewModel.swift in Sources */,
 				DD9701C02531B67500B26417 /* Classifier.swift in Sources */,
 				DD9702202532008200B26417 /* UITableView++.swift in Sources */,
 				DD9702172531FC0700B26417 /* FallbackCell.swift in Sources */,
 				DD9701A02531AC2100B26417 /* ListingModelController.swift in Sources */,
 				DD9702082531FBC300B26417 /* TableViewUpdater.swift in Sources */,
+				DD87609B25331442007839F5 /* Cache.swift in Sources */,
 				DD97019D2531AB7800B26417 /* ListingViewController.swift in Sources */,
 				DD9701E02531D50100B26417 /* LocalFilesProvider.swift in Sources */,
 				DD9702052531FBB600B26417 /* TableViewAdapter.swift in Sources */,
 				DD9702112531FBDF00B26417 /* TableViewCell.swift in Sources */,
 				DD97020E2531FBD500B26417 /* ScrollViewEvents.swift in Sources */,
+				DD261FDB25330A0E00013A78 /* ListingDisconnectInfoCell.swift in Sources */,
 				DD97016B2531A23000B26417 /* AppDelegate.swift in Sources */,
 				DD9702022531FBAF00B26417 /* TableViewCellTypeProvider.swift in Sources */,
 				DD9701FD2531FB8E00B26417 /* TableViewCellHeightProvider.swift in Sources */,

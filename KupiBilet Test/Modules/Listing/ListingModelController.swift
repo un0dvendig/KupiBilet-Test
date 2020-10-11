@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - Delegate
 protocol ListingModelControllerDelegate: AnyObject {
-    typealias PageLoadingResult = Result<[DisconnectInfo], Error>
+    typealias PageLoadingResult = Result<[TableViewCellViewModel], Error>
     
     /// Handles start of the page loading process.
     func pageLoading()
@@ -33,7 +33,7 @@ final class ListingModelController {
     private let listingService: ListingService
     
     // View models
-    private var listingItems: [DisconnectInfo] = []
+    private var disconnectInfoViewModel: [ListingDisconnectInfoCell.ViewModel] = []
     
     // MARK: Initialization
     init(
@@ -42,6 +42,31 @@ final class ListingModelController {
     ) {
         self.classifiersId = classifiersId
         self.listingService = listingService
+    }
+        
+    // MARK: - Methods
+    public func loadPage() {
+        DispatchQueue.main.async {
+            self.delegate?.pageLoading()
+        }
+        
+        self.updateListing { (result) in
+            switch result {
+            case .success:
+                DispatchQueue.main.async {
+                    let items = self.disconnectInfoViewModel
+                    self.delegate?.mainPageLoaded(
+                        with: .success(items)
+                    )
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.delegate?.mainPageLoaded(
+                        with: .failure(error)
+                    )
+                }
+            }
+        }
     }
     
     // MARK: Private methods
@@ -55,7 +80,12 @@ final class ListingModelController {
         ) { (result) in
             switch result {
             case .success(let disconnectInfoItems):
-                self.listingItems = disconnectInfoItems
+                let disconnectInfoViewModel = disconnectInfoItems.map {
+                    self.makeListingCellViewModel(
+                        usingDisconnectInfo: $0
+                    )
+                }
+                self.disconnectInfoViewModel = disconnectInfoViewModel
                 handler(.success)
             case .failure(let error):
                 handler(.failure(error))
@@ -63,28 +93,30 @@ final class ListingModelController {
         }
     }
     
-    // MARK: - Methods
-    public func loadPage() {
-        DispatchQueue.main.async {
-            self.delegate?.pageLoading()
+    private func makeListingCellViewModel(
+        usingDisconnectInfo disconnectInfo: DisconnectInfo
+    ) -> ListingDisconnectInfoCell.ViewModel {
+        let cityName = disconnectInfo.cityName
+        let streetName = disconnectInfo.streetName
+        
+        var houseInfo: String = "дом" + " " + disconnectInfo.houseNumber
+        if let buildingNumber = disconnectInfo.buildingNumber {
+            houseInfo += " " + "корпус" + " " + buildingNumber
+        }
+        if let buildingLetter = disconnectInfo.buildingLetter {
+            houseInfo += " " + "литер" + " " + buildingLetter
         }
         
-        self.updateListing { (result) in
-            switch result {
-            case .success:
-                DispatchQueue.main.async {
-                    let items = self.listingItems
-                    self.delegate?.mainPageLoaded(
-                        with: .success(items)
-                    )
-                }
-            case .failure(let error):
-                DispatchQueue.main.async {
-                    self.delegate?.mainPageLoaded(
-                        with: .failure(error)
-                    )
-                }
-            }
-        }
+        // TODO: Format me
+        let dateString = disconnectInfo.disconnectDateRange
+        
+        let listingDisconnectViewModel: ListingDisconnectInfoCell.ViewModel = .init(
+            cityName: cityName,
+            streetName: streetName,
+            houseInfo: houseInfo,
+            dateString: dateString
+        )
+        
+        return listingDisconnectViewModel
     }
 }

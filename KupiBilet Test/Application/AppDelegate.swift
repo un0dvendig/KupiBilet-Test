@@ -35,6 +35,9 @@ class AppDelegate: UIResponder {
             argument: classifiersId
         )
         window.rootViewController = listingViewController
+        if #available(iOS 13.0, *) {
+            window.overrideUserInterfaceStyle = .light
+        }
         self.window = window
         self.window?.makeKeyAndVisible()
     }

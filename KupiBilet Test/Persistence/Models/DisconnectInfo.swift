@@ -10,12 +10,12 @@ import Foundation
 // MARK: - DisconnectInfo
 struct DisconnectInfo {
     // MARK: Properties
-    private let cityName: String
-    private let streetName: String
-    private let houseNumber: String
-    private let buildingNumber: String?
-    private let buildingLetter: String?
-    private let disconnectDateRange: String
+    let cityName: String
+    let streetName: String
+    let houseNumber: String
+    let buildingNumber: String?
+    let buildingLetter: String?
+    let disconnectDateRange: String
 }
 
 // MARK: - Decodable
@@ -49,15 +49,22 @@ extension DisconnectInfo: Decodable {
             forKey: .houseNumber
         )
         
-        self.buildingNumber = try container.decodeIfPresent(
+        let buildingNumber = try container.decodeIfPresent(
             String.self,
             forKey: .buildingNumber
         )
+        self.buildingNumber = buildingNumber?.isEmpty == true
+            ? nil
+            : buildingNumber
         
-        self.buildingLetter = try container.decodeIfPresent(
+        let buildingLetter = try container.decodeIfPresent(
             String.self,
             forKey: .buildingLetter
         )
+        self.buildingLetter = buildingLetter?.isEmpty == true
+            ? nil
+            : buildingLetter
+        
         self.disconnectDateRange = try container.decode(
             String.self,
             forKey: .disconnectDateRange
