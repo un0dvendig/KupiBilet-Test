@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftyJSON
 import Zip
 
 // MARK: - LocalFilesProvider

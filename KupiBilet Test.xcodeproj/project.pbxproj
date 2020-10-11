@@ -40,6 +40,10 @@
 		DD9702172531FC0700B26417 /* FallbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9702162531FC0700B26417 /* FallbackCell.swift */; };
 		DD97021B2531FC3300B26417 /* TableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD97021A2531FC3300B26417 /* TableViewCellViewModel.swift */; };
 		DD9702202532008200B26417 /* UITableView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD97021F2532008200B26417 /* UITableView++.swift */; };
+		DDEA46902533300B008E3C1B /* SFProDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDEA468D2533300B008E3C1B /* SFProDisplay-Medium.ttf */; };
+		DDEA46912533300B008E3C1B /* SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDEA468E2533300B008E3C1B /* SFProDisplay-Regular.ttf */; };
+		DDEA46922533300B008E3C1B /* SFProDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDEA468F2533300B008E3C1B /* SFProDisplay-Bold.ttf */; };
+		DDEA469525333060008E3C1B /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA469425333060008E3C1B /* AppFont.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +84,10 @@
 		DD9702162531FC0700B26417 /* FallbackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallbackCell.swift; sourceTree = "<group>"; };
 		DD97021A2531FC3300B26417 /* TableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellViewModel.swift; sourceTree = "<group>"; };
 		DD97021F2532008200B26417 /* UITableView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView++.swift"; sourceTree = "<group>"; };
+		DDEA468D2533300B008E3C1B /* SFProDisplay-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Medium.ttf"; sourceTree = "<group>"; };
+		DDEA468E2533300B008E3C1B /* SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
+		DDEA468F2533300B008E3C1B /* SFProDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Bold.ttf"; sourceTree = "<group>"; };
+		DDEA469425333060008E3C1B /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +183,7 @@
 				DD9701902531A90200B26417 /* AppAssembler.swift */,
 				DD9701AB2531ADEB00B26417 /* AppConstants.swift */,
 				DD97016A2531A23000B26417 /* AppDelegate.swift */,
+				DDEA469425333060008E3C1B /* AppFont.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -182,6 +191,7 @@
 		DD9701822531A37F00B26417 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DDEA468C25332FCA008E3C1B /* Fonts */,
 				DD9701732531A23100B26417 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -313,6 +323,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		DDEA468C25332FCA008E3C1B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DDEA468F2533300B008E3C1B /* SFProDisplay-Bold.ttf */,
+				DDEA468D2533300B008E3C1B /* SFProDisplay-Medium.ttf */,
+				DDEA468E2533300B008E3C1B /* SFProDisplay-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -374,6 +394,9 @@
 			files = (
 				DD9701772531A23100B26417 /* LaunchScreen.storyboard in Resources */,
 				DD9701742531A23100B26417 /* Assets.xcassets in Resources */,
+				DDEA46922533300B008E3C1B /* SFProDisplay-Bold.ttf in Resources */,
+				DDEA46902533300B008E3C1B /* SFProDisplay-Medium.ttf in Resources */,
+				DDEA46912533300B008E3C1B /* SFProDisplay-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +468,7 @@
 				DD87609B25331442007839F5 /* Cache.swift in Sources */,
 				DD97019D2531AB7800B26417 /* ListingViewController.swift in Sources */,
 				DD9701E02531D50100B26417 /* LocalFilesProvider.swift in Sources */,
+				DDEA469525333060008E3C1B /* AppFont.swift in Sources */,
 				DD9702052531FBB600B26417 /* TableViewAdapter.swift in Sources */,
 				DD9702112531FBDF00B26417 /* TableViewCell.swift in Sources */,
 				DD97020E2531FBD500B26417 /* ScrollViewEvents.swift in Sources */,

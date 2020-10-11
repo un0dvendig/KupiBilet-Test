@@ -7,32 +7,57 @@
 
 import TinyConstraints
 import UIKit
+import SwiftRichString
 
 // MARK: - UITableViewCell
 final class ListingDisconnectInfoCell: UITableViewCell {
     // MARK: Private properties
     private enum Layout {
+        static let cellCornerRadius: CGFloat = 10
+        static let contentContainerBackgroundInsets: UIEdgeInsets = .init(
+            top: 10,
+            left: 10,
+            bottom: 10,
+            right: 10
+        )
+        
         static let contentContainerInsets: UIEdgeInsets = .init(
-            top: 0,
-            left: 0,
-            bottom: 0,
-            right: 0
+            top: 5,
+            left: 5,
+            bottom: 5,
+            right: 5
         )
         static let contentContainerSpacing: CGFloat = 5
         
-        static let cityLabelHeight: CGFloat = 60
-        static let streetLabelHeight: CGFloat = 60
-        static let houseLabelHeight: CGFloat = 60
-        static let dateLabelHeight: CGFloat = 60
+        static let cityLabelHeight: CGFloat = 20
+        static let streetLabelHeight: CGFloat = 20
+        static let houseLabelHeight: CGFloat = 20
+        static let dateLabelMaxHeight: CGFloat = 30
     }
     
     private enum Style {
-
+        static let cityLabelStyle: SwiftRichString.Style = .init {
+            $0.font = AppFont.bold20
+            $0.color = UIColor.black
+        }
+        static let streetLabelStyle: SwiftRichString.Style = .init {
+            $0.font = AppFont.medium15
+            $0.color = UIColor.black
+        }
+        static let houseLabelStyle: SwiftRichString.Style = .init {
+            $0.font = AppFont.regular15
+            $0.color = UIColor.black
+        }
+        static let dateLabelStyle: SwiftRichString.Style = .init {
+            $0.font = AppFont.bold17
+            $0.color = UIColor.purple
+        }
     }
     
     private var viewModel: ViewModel?
     
     // MARK: Subviews
+    private let contentContainerBackgroundView: UIView
     private let contentContainer: UIStackView
     private let cityLabel: UILabel
     private let streetLabel: UILabel
@@ -44,19 +69,19 @@ final class ListingDisconnectInfoCell: UITableViewCell {
         style: UITableViewCell.CellStyle,
         reuseIdentifier: String?
     ) {
+        self.contentContainerBackgroundView = Self.makeContentContainerBackgroundView()
         self.contentContainer = Self.makeContentContainer()
-        self.cityLabel = Self.makeLabel()
-        self.streetLabel = Self.makeLabel()
-        self.houseLabel = Self.makeLabel()
-        self.dateLabel = Self.makeLabel()
+        self.cityLabel = Self.makeCityLabel()
+        self.streetLabel = Self.makeStreetLabel()
+        self.houseLabel = Self.makeHouseLabel()
+        self.dateLabel = Self.makeDateLabel()
         
         super.init(
             style: style,
             reuseIdentifier: reuseIdentifier
         )
         
-        self.contentContainer.backgroundColor = .white
-        self.selectionStyle = .none
+        self.setupSelf()
         self.setupSubviews()
     }
     
@@ -71,15 +96,28 @@ final class ListingDisconnectInfoCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        self.cityLabel.text = nil
-        self.streetLabel.text = nil
-        self.houseLabel.text = nil
-        self.dateLabel.text = nil
+        self.cityLabel.styledText = nil
+        self.streetLabel.styledText = nil
+        self.houseLabel.styledText = nil
+        self.dateLabel.styledText = nil
     }
     
     // MARK: Private methods
+    private func setupSelf() {
+        self.backgroundColor = .clear
+        self.contentView.backgroundColor = .clear
+        self.selectionStyle = .none
+    }
+    
     private func setupSubviews() {
         self.contentView.addSubview(
+            self.contentContainerBackgroundView
+        )
+        self.contentContainerBackgroundView.edgesToSuperview(
+            insets: Layout.contentContainerBackgroundInsets
+        )
+        
+        self.contentContainerBackgroundView.addSubview(
             self.contentContainer
         )
         self.contentContainer.edgesToSuperview(
@@ -109,11 +147,11 @@ extension ListingDisconnectInfoCell: TableViewConfigurableCell {
         guard let viewModel = viewModel as? ViewModel else {
             return
         }
-        
-        self.cityLabel.text = viewModel.cityName
-        self.streetLabel.text = viewModel.streetName
-        self.houseLabel.text = viewModel.houseInfo
-        self.dateLabel.text = viewModel.dateString
+                
+        self.cityLabel.styledText = viewModel.cityName
+        self.streetLabel.styledText = viewModel.streetName
+        self.houseLabel.styledText = viewModel.houseInfo
+        self.dateLabel.styledText = viewModel.dateString
         
         self.viewModel = viewModel
     }
@@ -129,15 +167,19 @@ extension ListingDisconnectInfoCell: TableViewCellSelfHeightProvider {
             return .zero
         }
         
-        let height = Layout.contentContainerInsets.top
+        let contentContainerHeight = Layout.contentContainerInsets.top
             + Layout.cityLabelHeight
             + Layout.contentContainerSpacing
             + Layout.streetLabelHeight
             + Layout.contentContainerSpacing
             + Layout.houseLabelHeight
             + Layout.contentContainerSpacing
-            + Layout.dateLabelHeight
+            + Layout.dateLabelMaxHeight
             + Layout.contentContainerInsets.bottom
+        
+        let height = Layout.contentContainerBackgroundInsets.top
+            + contentContainerHeight
+            + Layout.contentContainerBackgroundInsets.bottom
         
         return height
     }
@@ -145,6 +187,14 @@ extension ListingDisconnectInfoCell: TableViewCellSelfHeightProvider {
 
 // MARK: - Factory
 extension ListingDisconnectInfoCell {
+    private static func makeContentContainerBackgroundView() -> UIView {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.clipsToBounds = true
+        view.layer.cornerRadius = Layout.cellCornerRadius
+        return view
+    }
+    
     private static func makeContentContainer() -> UIStackView {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -152,11 +202,44 @@ extension ListingDisconnectInfoCell {
         return stackView
     }
     
-    private static func makeLabel() -> UILabel {
+    private static func makeCityLabel() -> UILabel {
+        let label = UILabel()
+        label.numberOfLines = 1
+        label.textAlignment = .center
+        label.style = Style.cityLabelStyle
+        label.height(
+            Layout.cityLabelHeight
+        )
+        return label
+    }
+    
+    private static func makeStreetLabel() -> UILabel {
+        let label = UILabel()
+        label.numberOfLines = 1
+        label.textAlignment = .center
+        label.style = Style.streetLabelStyle
+        label.height(
+            Layout.streetLabelHeight
+        )
+        return label
+    }
+    
+    private static func makeHouseLabel() -> UILabel {
+        let label = UILabel()
+        label.numberOfLines = 1
+        label.textAlignment = .center
+        label.style = Style.houseLabelStyle
+        label.height(
+            Layout.houseLabelHeight
+        )
+        return label
+    }
+    
+    private static func makeDateLabel() -> UILabel {
         let label = UILabel()
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.textColor = .black
+        label.style = Style.dateLabelStyle
         return label
     }
 }

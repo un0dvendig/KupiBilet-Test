@@ -94,6 +94,7 @@ extension ListingViewController {
             style: .plain
         )
         tableView.separatorStyle = .none
+        tableView.backgroundColor = .lightGray
         return tableView
     }
     
