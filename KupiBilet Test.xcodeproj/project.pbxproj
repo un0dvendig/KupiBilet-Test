@@ -44,6 +44,8 @@
 		DDEA46912533300B008E3C1B /* SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDEA468E2533300B008E3C1B /* SFProDisplay-Regular.ttf */; };
 		DDEA46922533300B008E3C1B /* SFProDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDEA468F2533300B008E3C1B /* SFProDisplay-Bold.ttf */; };
 		DDEA469525333060008E3C1B /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA469425333060008E3C1B /* AppFont.swift */; };
+		DDEA46AE25333D78008E3C1B /* DummyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA46AD25333D78008E3C1B /* DummyView.swift */; };
+		DDEA46B225333E00008E3C1B /* DummyViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA46B125333E00008E3C1B /* DummyViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +90,8 @@
 		DDEA468E2533300B008E3C1B /* SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
 		DDEA468F2533300B008E3C1B /* SFProDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Bold.ttf"; sourceTree = "<group>"; };
 		DDEA469425333060008E3C1B /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
+		DDEA46AD25333D78008E3C1B /* DummyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyView.swift; sourceTree = "<group>"; };
+		DDEA46B125333E00008E3C1B /* DummyViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +221,7 @@
 		DD9701942531AA4200B26417 /* Listing */ = {
 			isa = PBXGroup;
 			children = (
+				DDEA46AC25333CA6008E3C1B /* Views */,
 				DD261FD9253309F100013A78 /* Cells */,
 				DD9701952531AA8900B26417 /* ListingAssembler.swift */,
 				DD876092253313F0007839F5 /* ListingCellHeightProvider.swift */,
@@ -331,6 +336,23 @@
 				DDEA468E2533300B008E3C1B /* SFProDisplay-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		DDEA46AC25333CA6008E3C1B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DDEA46B025333DF4008E3C1B /* DummyView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DDEA46B025333DF4008E3C1B /* DummyView */ = {
+			isa = PBXGroup;
+			children = (
+				DDEA46AD25333D78008E3C1B /* DummyView.swift */,
+				DDEA46B125333E00008E3C1B /* DummyViewViewModel.swift */,
+			);
+			path = DummyView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -462,10 +484,12 @@
 				DD261FE125330EEA00013A78 /* ListingDisconnectInfoCellViewModel.swift in Sources */,
 				DD9701C02531B67500B26417 /* Classifier.swift in Sources */,
 				DD9702202532008200B26417 /* UITableView++.swift in Sources */,
+				DDEA46B225333E00008E3C1B /* DummyViewViewModel.swift in Sources */,
 				DD9702172531FC0700B26417 /* FallbackCell.swift in Sources */,
 				DD9701A02531AC2100B26417 /* ListingModelController.swift in Sources */,
 				DD9702082531FBC300B26417 /* TableViewUpdater.swift in Sources */,
 				DD87609B25331442007839F5 /* Cache.swift in Sources */,
+				DDEA46AE25333D78008E3C1B /* DummyView.swift in Sources */,
 				DD97019D2531AB7800B26417 /* ListingViewController.swift in Sources */,
 				DD9701E02531D50100B26417 /* LocalFilesProvider.swift in Sources */,
 				DDEA469525333060008E3C1B /* AppFont.swift in Sources */,

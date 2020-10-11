@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import SVProgressHUD
+import Moya
 
 // MARK: - View controller
 final class ListingViewController: UIViewController {
@@ -15,12 +17,16 @@ final class ListingViewController: UIViewController {
     
     // MARK: Subview
     private let tableView: UITableView
+    private let noInternetDummyView: DummyView
+    private let otherErrorDummyView: DummyView
     
     // MARK: Initialization
     init(
         modelController: ListingModelController
     ) {
         self.tableView = Self.makeTableView()
+        self.noInternetDummyView = DummyView()
+        self.otherErrorDummyView = DummyView()
         
         self.tableViewDirector = Self.makeTableViewDirector(
             forTableView: self.tableView
@@ -34,6 +40,8 @@ final class ListingViewController: UIViewController {
         
         self.view.backgroundColor = .white
         self.setupSubviews()
+        
+        self.setupDummyViews()
         
         self.modelController.delegate = self
         self.tableView.dataSource = self.tableViewDirector.adapter
@@ -63,25 +71,94 @@ final class ListingViewController: UIViewController {
         self.tableView.edgesToSuperview(
             usingSafeArea: false
         )
+        
+        self.view.addSubview(
+            self.noInternetDummyView
+        )
+        self.noInternetDummyView.centerInSuperview()
+        
+        self.view.addSubview(
+            self.otherErrorDummyView
+        )
+        self.otherErrorDummyView.centerInSuperview()
+    }
+    
+    private func setupDummyViews() {
+        // TODO: Add localization
+        let retryButtonAction: () -> Void = {
+            self.hideShownDummyView()
+            self.modelController.loadPage()
+        }
+        let retryButtonViewModel: DummyView.ViewModel.ButtonViewModel = .init(
+            title: "Try Again",
+            action: retryButtonAction
+        )
+        
+        let noInternetViewModel: DummyView.ViewModel = .init(
+            title: "No connection 😔",
+            description: "It appears, that you are not connected to the Internet. Retry later.",
+            button: retryButtonViewModel
+        )
+        self.noInternetDummyView.configure(
+            withViewModel: noInternetViewModel
+        )
+        self.noInternetDummyView.isHidden = true
+        
+        let otherErrorViewModel: DummyView.ViewModel = .init(
+            title: "Unknown error 🤔",
+            description: "Something unexpected happened, please, try again.",
+            button: retryButtonViewModel
+        )
+        self.otherErrorDummyView.configure(
+            withViewModel: otherErrorViewModel
+        )
+        self.otherErrorDummyView.isHidden = true
+    }
+    
+    private func hideShownDummyView() {
+        if !self.noInternetDummyView.isHidden {
+            self.noInternetDummyView.isHidden = true
+        }
+        if !self.otherErrorDummyView.isHidden {
+            self.otherErrorDummyView.isHidden = true
+        }
     }
 }
 
 // MARK: - ListingModelControllerDelegate
 extension ListingViewController: ListingModelControllerDelegate {
     func pageLoading() {
-        
+        SVProgressHUD.show()
     }
     
     func mainPageLoaded(
         with result: PageLoadingResult
     ) {
+        SVProgressHUD.dismiss()
         switch result {
         case .success(let viewModels):
             self.tableViewDirector.set(
                 viewModels: viewModels
             )
         case .failure(let error):
-            print("Got and error! \(error)")
+            switch error {
+            case let MoyaError.underlying(error, _):
+                if let alamofireError = error.asAFError {
+                    switch alamofireError {
+                    case .sessionTaskFailed(let sessionError):
+                        if let urlError = sessionError as? URLError,
+                           urlError.code == URLError.Code.notConnectedToInternet {
+                            self.noInternetDummyView.isHidden = false
+                        }
+                    default:
+                        break
+                    }
+                }
+                break
+            default:
+                self.otherErrorDummyView.isHidden = false
+                print("Got and error! \(error)")
+            }
         }
     }
 }

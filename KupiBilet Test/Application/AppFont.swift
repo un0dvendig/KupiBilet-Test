@@ -13,6 +13,7 @@ enum AppFont {
     static let bold17: UIFont = bold(size: 17)
 
     // MARK: - Medium
+    static let medium17: UIFont = medium(size: 17)
     static let medium15: UIFont = medium(size: 15)
 
     // MARK: - Regular
