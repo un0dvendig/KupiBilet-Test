@@ -101,6 +101,6 @@ https://api.gu.spb.ru/UniversalMobileService/classifiers/downloadClassifiers?cla
 
 ## TODO:
 
-- [ ] Add proper README
+- [X] Add proper README
 - [ ] Refactor LocalFilesProvider (separate processes of (un)zipping and saving/loading)
 - [ ] Add local DB to store all parsed info
